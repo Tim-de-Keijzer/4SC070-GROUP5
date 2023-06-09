@@ -35,7 +35,7 @@ end
 piezo_gain = 1e-7;
 
 % load("time_array.mat")
-Ntrials = 11;
+Ntrials = 1;
 %% Simulate Piezo
 % error = [out.error.Time zeros(4011,1)];
 % % Edit the simulink file to include your ILC/RC implementation
