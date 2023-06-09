@@ -1,0 +1,1585 @@
+<?xml version="1.0" encoding="UTF-8"?><Root>
+      		<SubSystem>
+		<Name>Control</Name>
+		<xPCName>Model/Control</xPCName>
+				<SubSystem>
+		<Name>Repeating
+Sequence</Name>
+		<xPCName>Model/Control/Repeating Sequence</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Control/Repeating Sequence/Constant</xpcblkName>
+            <SLblockPath>Model/Control/Repeating Sequence/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Look-Up Table1</blkName>
+            <xpcblkName>Control/Repeating Sequence/Look-Up Table1</xpcblkName>
+            <SLblockPath>Model/Control/Repeating Sequence/Look-Up Table1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>rep_seq_y</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>BreakpointsForDimension1</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Clock</sigName>
+              <xpcsigName>Control/Repeating Sequence/Clock</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Output</sigName>
+              <xpcsigName>Control/Repeating Sequence/Output</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Look-Up Table1</sigName>
+              <xpcsigName>Control/Repeating Sequence/Look-Up Table1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Math
+Function</sigName>
+              <xpcsigName>Control/Repeating Sequence/Math Function</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Control/Repeating Sequence/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Repeating Sequence</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>SinCos Decoder</Name>
+		<xPCName>Model/Control/SinCos Decoder</xPCName>
+				<SubSystem>
+		<Name>Scope 5</Name>
+		<xPCName>Model/Control/SinCos Decoder/Scope 5</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 6</Name>
+		<xPCName>Model/Control/SinCos Decoder/Scope 6</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 7</Name>
+		<xPCName>Model/Control/SinCos Decoder/Scope 7</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Zero Detect Counter1</Name>
+		<xPCName>Model/Control/SinCos Decoder/Zero Detect Counter1</xPCName>
+				<SubSystem>
+		<Name>Compare
+To Constant</Name>
+		<xPCName>Model/Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant/Constant</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>const</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Compare</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant/Compare</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>NegCounter</Name>
+		<xPCName>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter</xPCName>
+		
+		
+            <block>
+            <blkName>Counts</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Counts</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Counts</SLblockPath>
+            <isSrc>[0 1 0]</isSrc>
+          <parameter>
+          <paramName>InitialOutput</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Constant_neg</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Constant_neg</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Constant_neg</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Unit Delay</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Unit Delay</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Unit Delay</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Unit Delay</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/NegCounter/Unit Delay</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/NegCounter</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>PosCounter</Name>
+		<xPCName>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter</xPCName>
+		
+		
+            <block>
+            <blkName>Counts</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Counts</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Counts</SLblockPath>
+            <isSrc>[0 1 0]</isSrc>
+          <parameter>
+          <paramName>InitialOutput</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Constant_pos</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Constant_pos</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Constant_pos</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Unit Delay</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Unit Delay</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Unit Delay</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Unit Delay</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/PosCounter/Unit Delay</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1/PosCounter</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Compare
+To Constant</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/Compare To Constant</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>const</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Hit  Crossing Neg</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/Hit  Crossing Neg</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/Hit  Crossing Neg</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>HitCrossingOffset</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Hit  Crossing Pos</blkName>
+            <xpcblkName>Control/SinCos Decoder/Zero Detect Counter1/Hit  Crossing Pos</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Zero Detect Counter1/Hit  Crossing Pos</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>HitCrossingOffset</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Hit  Crossing Neg</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/Hit  Crossing Neg</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Hit  Crossing Pos</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/Hit  Crossing Pos</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Logical Operator Neg</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/Logical Operator Neg</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Logical Operator Pos</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/Logical Operator Pos</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Add2</sigName>
+              <xpcsigName>Control/SinCos Decoder/Zero Detect Counter1/Add2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder/Zero Detect Counter1</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>MATLAB Function</Name>
+		<xPCName>Model/Control/SinCos Decoder/MATLAB Function</xPCName>
+		
+		
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain1</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain10</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain10</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain10</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain11</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain11</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain11</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain3</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain3</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain3</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain4</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain4</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain4</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain5</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain5</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain5</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain6</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain6</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain6</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain7</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain7</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain7</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain8</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain8</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain8</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain9</blkName>
+            <xpcblkName>Control/SinCos Decoder/Gain9</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Gain9</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Delay</blkName>
+            <xpcblkName>Control/SinCos Decoder/Delay</xpcblkName>
+            <SLblockPath>Model/Control/SinCos Decoder/Delay</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>MATLAB Function/p1</sigName>
+              <xpcsigName>Control/SinCos Decoder/MATLAB Function/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>MATLAB Function/p2</sigName>
+              <xpcsigName>Control/SinCos Decoder/MATLAB Function/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain1</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encRef</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain10</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain10</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encCosUnc</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain11</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain11</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>idealPos</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain2</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain3</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encCount</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain4</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain5</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encSinCor</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain6</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encInt</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain7</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain7</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain8</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain8</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encCosCor</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain9</sigName>
+              <xpcsigName>Control/SinCos Decoder/Gain9</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+                <sigLabel>encSinUnc</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Divide</sigName>
+              <xpcsigName>Control/SinCos Decoder/Divide</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Add</sigName>
+              <xpcsigName>Control/SinCos Decoder/Add</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Add1</sigName>
+              <xpcsigName>Control/SinCos Decoder/Add1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum of
+Elements</sigName>
+              <xpcsigName>Control/SinCos Decoder/Sum of Elements</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum of
+Elements1</sigName>
+              <xpcsigName>Control/SinCos Decoder/Sum of Elements1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum1</sigName>
+              <xpcsigName>Control/SinCos Decoder/Sum1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>atan2</sigName>
+              <xpcsigName>Control/SinCos Decoder/atan2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Delay</sigName>
+              <xpcsigName>Control/SinCos Decoder/Delay</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/SinCos Decoder</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Subsystem</Name>
+		<xPCName>Model/Control/Subsystem</xPCName>
+		
+		
+            <block>
+            <blkName>Constant</blkName>
+            <xpcblkName>Control/Subsystem/Constant</xpcblkName>
+            <SLblockPath>Model/Control/Subsystem/Constant</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Memory</blkName>
+            <xpcblkName>Control/Subsystem/Memory</xpcblkName>
+            <SLblockPath>Model/Control/Subsystem/Memory</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>InitialCondition</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Subsystem</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Memory</sigName>
+              <xpcsigName>Control/Subsystem/Memory</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Control/Subsystem/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Subsystem</SubSystemName>
+                <sigLabel>index_counter</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Direct Lookup
+Table (n-D)</sigName>
+              <xpcsigName>Control/Subsystem/Direct Lookup Table (n-D)</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Subsystem</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Waveform Generator</Name>
+		<xPCName>Model/Control/Waveform Generator</xPCName>
+				<SubSystem>
+		<Name>Scaling</Name>
+		<xPCName>Model/Control/Waveform Generator/Scaling</xPCName>
+		
+		
+            <block>
+            <blkName>Gain</blkName>
+            <xpcblkName>Control/Waveform Generator/Scaling/Gain</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Scaling/Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Scaling</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Gain</sigName>
+              <xpcsigName>Control/Waveform Generator/Scaling/Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator/Scaling</SubSystemName>
+                <sigLabel>alpha</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Divide</sigName>
+              <xpcsigName>Control/Waveform Generator/Scaling/Divide</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator/Scaling</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 1</Name>
+		<xPCName>Model/Control/Waveform Generator/Scope 1</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 2</Name>
+		<xPCName>Model/Control/Waveform Generator/Scope 2</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Walking waveform</Name>
+		<xPCName>Model/Control/Waveform Generator/Walking waveform</xPCName>
+		
+		
+            <block>
+            <blkName>C1</blkName>
+            <xpcblkName>Control/Waveform Generator/Walking waveform/C1</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Walking waveform/C1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Table</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>BreakpointsForDimension1</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>C2</blkName>
+            <xpcblkName>Control/Waveform Generator/Walking waveform/C2</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Walking waveform/C2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Table</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>BreakpointsForDimension1</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>S1</blkName>
+            <xpcblkName>Control/Waveform Generator/Walking waveform/S1</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Walking waveform/S1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Table</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>BreakpointsForDimension1</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>S2</blkName>
+            <xpcblkName>Control/Waveform Generator/Walking waveform/S2</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Walking waveform/S2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Table</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>BreakpointsForDimension1</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>C1</sigName>
+              <xpcsigName>Control/Waveform Generator/Walking waveform/C1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+                <sigLabel>C1</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>C2</sigName>
+              <xpcsigName>Control/Waveform Generator/Walking waveform/C2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+                <sigLabel>C2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>S1</sigName>
+              <xpcsigName>Control/Waveform Generator/Walking waveform/S1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+                <sigLabel>S1</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>S2</sigName>
+              <xpcsigName>Control/Waveform Generator/Walking waveform/S2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator/Walking waveform</SubSystemName>
+                <sigLabel>S2</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Constant2</blkName>
+            <xpcblkName>Control/Waveform Generator/Constant2</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Constant2</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Value</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain3</blkName>
+            <xpcblkName>Control/Waveform Generator/Gain3</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Gain3</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain4</blkName>
+            <xpcblkName>Control/Waveform Generator/Gain4</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Gain4</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Saturation</blkName>
+            <xpcblkName>Control/Waveform Generator/Saturation</xpcblkName>
+            <SLblockPath>Model/Control/Waveform Generator/Saturation</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>UpperLimit</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>LowerLimit</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Control/Waveform Generator/Gain1</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain2</sigName>
+              <xpcsigName>Control/Waveform Generator/Gain2</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain3</sigName>
+              <xpcsigName>Control/Waveform Generator/Gain3</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+                <sigLabel>ClampTru</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain4</sigName>
+              <xpcsigName>Control/Waveform Generator/Gain4</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+                <sigLabel>ShearTru</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain7</sigName>
+              <xpcsigName>Control/Waveform Generator/Gain7</xpcsigName>
+              <sigWidth>4</sigWidth>
+              <sigDim>[4, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Math Function</sigName>
+              <xpcsigName>Control/Waveform Generator/Math Function</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+                <sigLabel>alpha_mod</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Saturation</sigName>
+              <xpcsigName>Control/Waveform Generator/Saturation</xpcsigName>
+              <sigWidth>4</sigWidth>
+              <sigDim>[4, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Control/Waveform Generator/Sum</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum1</sigName>
+              <xpcsigName>Control/Waveform Generator/Sum1</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model/Control/Waveform Generator</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+		
+            <block>
+            <blkName>Repeating
+Sequence</blkName>
+            <xpcblkName>Control/Repeating Sequence</xpcblkName>
+            <SLblockPath>Model/Control/Repeating Sequence</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>rep_seq_y</paramName>
+          <dim>[1, 3]</dim>  
+		  <SubSystemName>Model/Control</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Control/Gain1</xpcblkName>
+            <SLblockPath>Model/Control/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Control</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Control/Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control</SubSystemName>
+                <sigLabel>reference</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Add1</sigName>
+              <xpcsigName>Control/Add1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control</SubSystemName>
+                <sigLabel>error</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Sum</sigName>
+              <xpcsigName>Control/Sum</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Control</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Hardware Setup</Name>
+		<xPCName>Model/Hardware Setup</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 2</Name>
+		<xPCName>Model/Scope 2</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 3</Name>
+		<xPCName>Model/Scope 3</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 5</Name>
+		<xPCName>Model/Scope 5</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Scope 6</Name>
+		<xPCName>Model/Scope 6</xPCName>
+		
+		
+
+		</SubSystem>
+		<SubSystem>
+		<Name>Signals</Name>
+		<xPCName>Model/Signals</xPCName>
+		
+		
+            <block>
+            <blkName>IO397 Analog Input</blkName>
+            <xpcblkName>Signals/IO397 Analog Input</xpcblkName>
+            <SLblockPath>Model/Signals/IO397 Analog Input</SLblockPath>
+            <isSrc>[1 0 4]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P5</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P6</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P7</paramName>
+          <dim>[1, 2]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>IO397 Analog Input1</blkName>
+            <xpcblkName>Signals/IO397 Analog Input1</xpcblkName>
+            <SLblockPath>Model/Signals/IO397 Analog Input1</SLblockPath>
+            <isSrc>[1 0 2]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 2]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P5</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P6</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P7</paramName>
+          <dim>[1, 2]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>IO397 Analog Output1</blkName>
+            <xpcblkName>Signals/IO397 Analog Output1</xpcblkName>
+            <SLblockPath>Model/Signals/IO397 Analog Output1</SLblockPath>
+            <isSrc>[0 4 0]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P5</paramName>
+          <dim>[1, 4]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P6</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P7</paramName>
+          <dim>[1, 2]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P8</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model/Signals</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>IO397 Analog Input/p1</sigName>
+              <xpcsigName>Signals/IO397 Analog Input/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Signals</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>IO397 Analog Input/p2</sigName>
+              <xpcsigName>Signals/IO397 Analog Input/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Signals</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>IO397 Analog Input/p3</sigName>
+              <xpcsigName>Signals/IO397 Analog Input/p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Signals</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>IO397 Analog Input/p4</sigName>
+              <xpcsigName>Signals/IO397 Analog Input/p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Signals</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>IO397 Analog Input1/p1</sigName>
+              <xpcsigName>Signals/IO397 Analog Input1/p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Signals</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>IO397 Analog Input1/p2</sigName>
+              <xpcsigName>Signals/IO397 Analog Input1/p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model/Signals</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+		</SubSystem>
+
+      
+            <block>
+            <blkName>Gain</blkName>
+            <xpcblkName>Gain</xpcblkName>
+            <SLblockPath>Model/Gain</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain1</blkName>
+            <xpcblkName>Gain1</xpcblkName>
+            <SLblockPath>Model/Gain1</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain2</blkName>
+            <xpcblkName>Gain2</xpcblkName>
+            <SLblockPath>Model/Gain2</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain3</blkName>
+            <xpcblkName>Gain3</xpcblkName>
+            <SLblockPath>Model/Gain3</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain4</blkName>
+            <xpcblkName>Gain4</xpcblkName>
+            <SLblockPath>Model/Gain4</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Gain5</blkName>
+            <xpcblkName>Gain5</xpcblkName>
+            <SLblockPath>Model/Gain5</SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>Gain</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>Model</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Gain</sigName>
+              <xpcsigName>Gain</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model</SubSystemName>
+                <sigLabel>Error</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain1</sigName>
+              <xpcsigName>Gain1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model</SubSystemName>
+                <sigLabel>Velocity</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain2</sigName>
+              <xpcsigName>Gain2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model</SubSystemName>
+                <sigLabel>Position</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain3</sigName>
+              <xpcsigName>Gain3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>Model</SubSystemName>
+                <sigLabel>CommAngle</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain4</sigName>
+              <xpcsigName>Gain4</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model</SubSystemName>
+                <sigLabel>ClampAnl</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Gain5</sigName>
+              <xpcsigName>Gain5</xpcsigName>
+              <sigWidth>2</sigWidth>
+              <sigDim>[2, 1]</sigDim>
+			  <SubSystemName>Model</SubSystemName>
+                <sigLabel>ShearAnl</sigLabel>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+<block>
+   <blkName>Model Parameters</blkName>
+   <xpcblkName>Model Parameters</xpcblkName>
+   <SLblockPath>. </SLblockPath>
+   <isSrc>[0 1 1]</isSrc>
+   <parameter>
+      <paramName>pAmpGain</paramName>
+          <dim>[1,4]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pAngleCorrection</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pClampAmpl</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pClampOffs</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pCosineGain</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pCosineOffset</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pEncRes</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pShearAmpl</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pShearOffs</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pShearStep</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pSineGain</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>pSineOffset</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>tSample</paramName>
+          <dim>[1,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+   <parameter>
+      <paramName>u_ff</paramName>
+          <dim>[50000,1]</dim>
+		 <SubSystemName>Model</SubSystemName>
+   </parameter>
+</block>
+</Root>
