@@ -148,9 +148,10 @@ legend('Real position','First order polynomial fit',Location='best')
 ylabel('Position [m]')
 title('First order polynomial fit of position')
 
-pShearFit = P(1)*2*pi;
+pShearFit = P(1)*2*pi
 pShearSim = 2.1e-6;
-diff_factor = pShearSim/pShearFit
+pShearApprox = y(end)-y(1)
+diff_factor = pShearSim/pShearFit;
 
 
 %% approximate gain backward
@@ -176,9 +177,24 @@ legend('Real position','First order polynomial fit',Location='best')
 ylabel('Position [m]')
 title('First order polynomial fit of position backward')
 
-pShearFitback = P(1)*2*pi;
+pShearFitback = P(1)*2*pi
 pShearSim = 2.1e-6;
+pShearApproxback = y(1)-y(end)
 diff_factorback = pShearSim/pShearFitback
 
+% figure
+% plot(noff.expData.commAngle)
+
+%% plot encoders
+
 figure
-plot(noff.expData.commAngle)
+plot(ff_05.expData.enc.cos(1000:2000))
+hold on
+plot(ff_05.expData.enc.sin(1000:2000))
+
+figure
+plot(ff_05.expData.enc.cosUnc(1000:2000))
+hold on
+plot(ff_05.expData.enc.sinUnc(1000:2000))
+
+
