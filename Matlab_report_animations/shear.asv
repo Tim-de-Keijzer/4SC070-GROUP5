@@ -23,10 +23,10 @@ x1_sol = [zeros(1,N); zeros(1,N)+(-0.2+0.4/N:0.4/N:0.2); ones(1,N)+(-0.2+0.4/N:0
 y1_sol = [zeros(1,N); ones(1,N)+0.1*sin((0+1/N:1/N:1)*pi); ones(1,N)+0.1*sin((0+1/N:1/N:1)*pi); zeros(1,N); zeros(1,N)];
 
 x2_sol = [zeros(1,N); zeros(1,N)+(-0.2+0.4/N:0.4/N:0.2); ones(1,N)+(-0.2+0.4/N:0.4/N:0.2); ones(1,N); zeros(1,N)]; 
-y2_sol = [zeros(1,N)-0.2*sin((0+1/N:1/N:1)*pi); ones(1,N)+0.1*sin((0+1/N:1/N:1)*pi)-0.2*sin((0+1/N:1/N:1)*pi); ones(1,N)+0.1*sin((0+1/N:1/N:1)*pi)-0.2*sin((0+1/N:1/N:1)*pi); zeros(1,N)-0.2*sin((0+1/N:1/N:1)*pi); zeros(1,N)-0.2*sin((0+1/N:1/N:1)*pi)].*-1+2.3;
+y2_sol = [zeros(1,N); ones(1,N)+0.1*sin((0+1/N:1/N:1)*pi); ones(1,N)+0.1*sin((0+1/N:1/N:1)*pi); zeros(1,N); zeros(1,N)].*-1+2.3;
 
 x1clamp_sol = [zeros(1,N); zeros(1,N); ones(1,N); ones(1,N); zeros(1,N)]; 
-y1clamp_sol = [zeros(1,N); ones(1,N)-0.2*sin((0+1/N:1/N:1)*pi); ones(1,N)-0.2*sin((0+1/N:1/N:1)*pi); zeros(1,N); zeros(1,N)]*-1+3.33;
+y1clamp = [zeros(1,N); ones(1,N); ones(1,N); zeros(1,N); zeros(1,N)]+2.33;
 
 %% ideal
 figure
@@ -95,8 +95,6 @@ plot(x1_sol(:,i),y1_sol(:,i),'b', 'LineWidth',2)
 hold on
 yline(1.3, '--')
 yline(1, '--')
-yline(y1_sol(3,i), ':')
-yline(y2_sol(3,i), ':')
 plot(x2_sol(:,i),y2_sol(:,i),'b', 'LineWidth',2)
 plot(x1clamp_sol(:,i),y1clamp_sol(:,i),'c', 'LineWidth',2)
 hold off
