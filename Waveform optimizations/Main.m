@@ -7,7 +7,8 @@
 % Author: Yves Elmensdorp. Edited by Lennart Blanken, Max van Meer for LC
 % Date: March 2021. Edited May 2023
 % +-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+
-
+clear all;
+clc;
 clearvars;
 close all;
 home;
@@ -46,8 +47,8 @@ optPlotEnd      = round(tMeas/tSample);                         % Plot till end
 %% ==========================================================================
 % Init workspace parameters
 % ===========================================================================
-disp('===============================================================')
-disp('Starting script')
+% disp('===============================================================')
+% disp('Starting script')
 
 % Sampling
 nSample = floor(tMeas/tSample);
