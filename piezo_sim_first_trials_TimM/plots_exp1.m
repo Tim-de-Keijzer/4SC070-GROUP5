@@ -49,19 +49,21 @@ title('Error vs \alpha for backward movement, no FF')
 % position forward
 figure
 hold on
+plot(noff.expData.commAngle(1:840),noff.expData.idealPos(1:840)-noff.expData.idealPos(1))
 for i = 0:10
 plot(noff.expData.commAngle(1+i*840:840+i*840),noff.expData.position(1+i*840:840+i*840)-noff.expData.position(1+i*840))
 end
-plot(noff.expData.commAngle(1:840),noff.expData.idealPos(1:840)-noff.expData.idealPos(1))
-xline(pi/2,Color='k')
-xline(pi,Color='k')
-xline(pi*3/2,Color='k')
+% plot(noff.expData.commAngle(1:840),noff.expData.idealPos(1:840)-noff.expData.idealPos(1))
+% xline(pi/2,Color='k')
+% xline(pi,Color='k')
+% xline(pi*3/2,Color='k')
 xlabel('Commutation angle \pi [rad]')
 xticks([0 pi/2 pi 3/2*pi 2*pi])
 xticklabels({'0','0.5 \pi','\pi','1.5 \pi', '2 \pi'})
 xlim([0 2*pi])
 ylabel('Position [m]')
-title('Position vs \alpha for forward movement, no FF')
+title('Position vs \alpha for forward movement')
+legend('Reference','Actual position')
 
 % position backward
 figure
