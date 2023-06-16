@@ -1,13 +1,21 @@
-function norm_error = Opti_clamp05pi(x)
+function norm_error = Opti_Clamp1_exp(x)
 
-% clc; clear all; close all;
+%% Global variables
+global Clamp1Width Clamp1Amp x_result
 
-global width amplitude x_result
+Clamp1Width         = x(1);  % clamp dimple width
+Clamp1Amp           = x(2);  % clamp dimple height
 
-width         = x(1);  % clamp dimple width
-amplitude     = x(2);  % clamp dimple height
+% Other waveform parameters
+Clamp2Width = 0.001;
+Clamp2Amp = 0;
+ShearWidth = 0.001;
+ShearAmp = 0;
+ClampsSineWidth = 0.001;
+ClampsSineAmp = 0;
 
-displayU=sprintf('Amplitude %f, width %f',amplitude,width);
+% get message to continue
+displayU=sprintf('Amplitude %f, width %f',Clamp1Amp,Clamp1Width);
 
 answer = questdlg(sprintf('%s\n Do you want to continue with the next fmincon search?', displayU), 'Check','Yes','No','No');
 if strcmp(answer,'No')
@@ -156,9 +164,16 @@ else
     setparam(tg, getparamid(tg, '', 'pSineGain'), pCosineGain)
     
     setparam(tg, getparamid(tg, '', 'u_ff'), u_ff)
+
     %added parameters for optimization
-    setparam(tg, getparamid(tg, '', 'width'), width)
-    setparam(tg, getparamid(tg, '', 'amplitude'), amplitude)
+    setparam(tg, getparamid(tg, '', 'Clamp1Width'), Clamp1Width)
+    setparam(tg, getparamid(tg, '', 'Clamp1Amp'), Clamp1Amp)
+    setparam(tg, getparamid(tg, '', 'Clamp2Width'), Clamp2Width)
+    setparam(tg, getparamid(tg, '', 'Clamp2Amp'), Clamp2Amp)
+    setparam(tg, getparamid(tg, '', 'ShearWidth'), ShearWidth)
+    setparam(tg, getparamid(tg, '', 'ShearAmp'), ShearAmp)
+    setparam(tg, getparamid(tg, '', 'ClampsSineWidth'), ClampsSineWidth)
+    setparam(tg, getparamid(tg, '', 'ClampsSineAmp'), ClampsSineAmp)
 end
 
 % Construct data output object
@@ -205,6 +220,9 @@ disp('Experiment finished.')
 disp('===============================================================')
 
 
+
+
+
 %% get data from simulation
 
 x_result = [x_result; x'];
@@ -223,8 +241,7 @@ zeros_found = find(angle==0);
 N = zeros_found(3)-zeros_found(2);
 
 %get correct range of error
-range_pi = 0.15*pi;
-range = range_pi/2/pi;
+range = 0.1/2;
 range_N = ceil(range*N);
 
 error_all = zeros(N,10);
@@ -266,5 +283,3 @@ norm_error = norm2_range;
 % plot(y)
 
 end
-
-
