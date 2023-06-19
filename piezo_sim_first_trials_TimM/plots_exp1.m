@@ -50,8 +50,8 @@ title('Error vs \alpha for backward movement, no FF')
 figure
 hold on
 plot(noff.expData.commAngle(1:840),noff.expData.idealPos(1:840)-noff.expData.idealPos(1))
-for i = 0:10
-plot(noff.expData.commAngle(1+i*840:840+i*840),noff.expData.position(1+i*840:840+i*840)-noff.expData.position(1+i*840))
+for i = 1:10
+plot(noff.expData.commAngle(1+i*840:840+i*840),noff.expData.position(1+i*840:840+i*840)-noff.expData.position(1+i*840),Color=[0.8500, 0.3250, 0.0980])
 end
 % plot(noff.expData.commAngle(1:840),noff.expData.idealPos(1:840)-noff.expData.idealPos(1))
 % xline(pi/2,Color='k')
