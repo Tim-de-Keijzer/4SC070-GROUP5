@@ -1,101 +1,106 @@
-function [norm_e, FF_start] = alpha_ILC(i, gamma_gain, FF_start)
+function [norm_e, FF_start, expData] = alpha_ILC(i, gamma_gain, FF_start, Q_filter)
 
-clearvars;
-close all;
-home;
+forwardGain = 1.09e-6; %1.15e-6; %% good fit after hysteresis
+backwardGain = 1.32e-6; %1.32e-6; %% good fit after hysteresis
 
-
-% Other waveform parameters
-forwardGain = 1.0064e-6;
-backwardGain = 1.32e-6;
 Clamp1Width = 0.001;
-Clamp1Amp = 0;
+Clamp1Amp = 0;%0.2;
 Clamp2Width = 0.001;
-Clamp2Amp = 0;
+Clamp2Amp = 0.08;%;0.1;
 ShearWidth = 0.001;
-ShearAmp = 0;
+ShearAmp = -0.1;
+ofsetshear2 = -0.05;
 ClampsSineWidth = 0.001;
-ClampsSineAmp = 0;
+ClampsSineAmp = 0;%-0.15;
+
+% Experiment properties
+tMeas               = 5; 	% Measurement time in [s]. Set inf for continuous
+tSample             = 1e-4; % Sample time in [s]
+t = 0:tSample:tMeas-tSample;
+
 
 if i == 0
     u_ff(:,1) = zeros(tMeas/tSample,1); % Zero feedforward by default.
+    uffsave = u_ff;
     save('u_ff_old', 'uffsave');
 else
-data = load('expData.mat');
-uff = load('u_ff_old');
+    data = load('expData.mat');
+    uff = load('u_ff_old');
 
-u_ff(:,1) = uff.uffsave;
+    u_ff(:,1) = uff.uffsave;
 
-input = uff.uffsave(FF_start:end) + gamma_gain*data.expData.error(FF_start:end);
+    input = uff.uffsave(FF_start:end) + gamma_gain*data.expData.error(FF_start:end);
 
-Q = Q_filter;
+    Q = Q_filter;
 
-b = Q.numerator{1};
-a = Q.Denomintor{1};
-f_jplus1 = filtfilt(b,a,input);
+    [b,a] = ss2tf(Q.A,Q.B,Q.C,Q.D);
 
-u_ff(FF_start:end,1) = f_jplus1;
-uffsave = u_ff;
+    f_jplus1 = filtfilt(b,a,input);
 
-save('u_ff_old', 'uffsave');
+    u_ff(FF_start:end,1) = f_jplus1;
+    uffsave = u_ff;
 
-N_forward = 0;
-N_backward = 0;
+    save('u_ff_old', 'uffsave');
 
-for i_comm = 1:length(data.expData.commAngle)
-delta = data.expData.commAngle(i_comm) - data.expData.commAngle(i_comm+1);
+    N_forward = 0;
+    N_backward = 0;
 
-if delta > 1.0
-    N_forward = [N_forward, i_comm];
+    for i_comm = 1:length(data.expData.commAngle)-1
+    delta = data.expData.commAngle(i_comm) - data.expData.commAngle(i_comm+1);
+
+    if delta > 3.0
+        N_forward = [N_forward, i_comm];
+    end
+
+    if delta < -3.0
+        N_backward = [N_backward, i_comm];
+    end 
+    end
+
+    N_forward = N_forward(2:end);
+    N_backward = N_forward(2:end);
+
+    N_forward_length = N_forward(3)-N_forward(2);
+    N_backward_length = N_backward(3)-N_backward(2);
+
+    FF_start = N_forward(2)+1;
+
+    figure()
+    plot(data.expData.t, u_ff(:,1))
+    hold on
+    plot(data.expData.t, data.expData.reference)
+    plot(data.expData.t, u_ff(:,1)+data.expData.reference)
+    title('Feedforward signal and reference')
+    legend('FF', 'Ref', 'FF+Ref')
+
+    figure()
+    plot(data.expData.t(N_forward(2):N_forward(3)), u_ff(N_forward(2):N_forward(3),1))
+    hold on
+    plot(data.expData.t(N_forward(2):N_forward(3)), data.expData.reference(N_forward(2):N_forward(3)))
+    plot(data.expData.t(N_forward(2):N_forward(3)), u_ff(N_forward(2):N_forward(3),1)+data.expData.reference(N_forward(2):N_forward(3)))
+    title('Feedforward signal and reference 1 alpha forward')
+    legend('FF', 'Ref', 'FF+Ref')
+
+    figure()
+    plot(data.expData.t(N_backward(3):N_backward(4)), u_ff(N_backward(3):N_backward(4),1))
+    hold on
+    plot(data.expData.t(N_backward(3):N_backward(4)), data.expData.reference(N_backward(3):N_backward(4)))
+    plot(data.expData.t(N_backward(3):N_backward(4)), u_ff(N_backward(3):N_backward(4),1)+data.expData.reference(N_backward(3):N_backward(4)))
+    title('Feedforward signal and reference 1 alpha 1 alpha backaward')
+    legend('FF', 'Ref', 'FF+Ref')
+
+    figure()
+    plot(data.expData.t(N_forward(3):N_forward(4)), data.expData.error(N_forward(3):N_forward(4),1))
+    title('Error 1 alpha forward')
+    legend('Error')
+
+    figure()
+    plot(data.expData.t(N_backward(3):N_backward(4)), data.expData.error(N_backward(3):N_backward(4),1))
+    title('Error 1 alpha backaward')
+    legend('Error')
+
 end
 
-if delta < -1.0
-    N_backward = [N_backward, i_comm];
-end 
-end
-
-N_forward = N_forward(2:end);
-N_backward = N_forward(2:end);
-
-N_forward_length = N_forward(3)-N_forward(2);
-N_backward_length = N_backward(3)-N_backward(2);
-
-FF_start = N_forward(2)+1;
-
-figure()
-plot(data.expData.t, u_ff(:,1))
-hold on
-plot(data.expData.t, data.expData.reference)
-plot(data.expData.t, u_ff(:,1)+data.expData.reference)
-title('Feedforward signal and reference')
-legend('FF', 'Ref', 'FF+Ref')
-
-figure()
-plot(data.expData.t(N_forward(2):N_forward(3)), u_ff(N_forward(2):N_forward(3),1))
-hold on
-plot(data.expData.t(N_forward(2):N_forward(3)), data.expData.reference(N_forward(2):N_forward(3)))
-plot(data.expData.t(N_forward(2):N_forward(3)), u_ff(N_forward(2):N_forward(3),1)+data.expData.reference(N_forward(2):N_forward(3)))
-title('Feedforward signal and reference 1 alpha forward')
-legend('FF', 'Ref', 'FF+Ref')
-
-figure()
-plot(data.expData.t(N_backward(2):N_backward(3)), u_ff(N_backward(2):N_backward(5),1))
-hold on
-plot(data.expData.t(N_backward(2):N_backward(3)), data.expData.reference(N_backward(2):N_backward(3)))
-plot(data.expData.t(N_backward(2):N_backward(3)), u_ff(N_backward(2):N_backward(3),1)+data.expData.reference(N_backward(2):N_backward(3)))
-title('Feedforward signal and reference 1 alpha 1 alpha backaward')
-legend('FF', 'Ref', 'FF+Ref')
-
-end
-
-
-% % get message to continue
-% displayU=sprintf('Amplitude %f, width %f',Clamp1Amp,Clamp1Width);
-
-answer = questdlg(sprintf('%s\n Conitnue with next learning iteration?'), 'Check','Yes','No','No');
-if strcmp(answer,'No')
-    return
-end
 
 % --------------------------------------------------------------------------
 % Parameters that can be changed
@@ -241,14 +246,17 @@ else
     setparam(tg, getparamid(tg, '', 'u_ff'), u_ff)
 
     %added parameters for optimization
-    setparam(tg, getparamid(tg, '', 'Clamp1Width'), Clamp1Width)
-    setparam(tg, getparamid(tg, '', 'Clamp1Amp'), Clamp1Amp)
-    setparam(tg, getparamid(tg, '', 'Clamp2Width'), Clamp2Width)
-    setparam(tg, getparamid(tg, '', 'Clamp2Amp'), Clamp2Amp)
-    setparam(tg, getparamid(tg, '', 'ShearWidth'), ShearWidth)
-    setparam(tg, getparamid(tg, '', 'ShearAmp'), ShearAmp)
-    setparam(tg, getparamid(tg, '', 'ClampsSineWidth'), ClampsSineWidth)
-    setparam(tg, getparamid(tg, '', 'ClampsSineAmp'), ClampsSineAmp)
+    setparam(tg, getparamid(tg, '', 'forwardGain'), forwardGain) %% added
+    setparam(tg, getparamid(tg, '', 'backwardGain'), backwardGain) %% added
+%     setparam(tg, getparamid(tg, '', 'Clamp1Width'), Clamp1Width) %% added
+    setparam(tg, getparamid(tg, '', 'Clamp1Amp'), Clamp1Amp) %% added
+%     setparam(tg, getparamid(tg, '', 'Clamp2Width'), Clamp2Width) %% added
+    setparam(tg, getparamid(tg, '', 'Clamp2Amp'), Clamp2Amp) %% added
+%     setparam(tg, getparamid(tg, '', 'ShearWidth'), ShearWidth) %% added
+    setparam(tg, getparamid(tg, '', 'ShearAmp'), ShearAmp) %% added
+%     setparam(tg, getparamid(tg, '', 'ClampsSineWidth'), ClampsSineWidth) %% added
+    setparam(tg, getparamid(tg, '', 'ClampsSineAmp'), ClampsSineAmp) %% added
+   setparam(tg, getparamid(tg, '', 'ofsetshear2'), ofsetshear2) %% added
 end
 
 % Construct data output object
